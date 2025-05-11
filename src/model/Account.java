@@ -43,6 +43,7 @@ public class Account {
 
     public void setLimit(Double limit) {
         this.limit = limit;
+        this.updateTotalAmount();
     }
 
     public Double getTotalAmount() {
@@ -71,7 +72,7 @@ public class Account {
                 System.out.println("Saque efetuado com sucesso.");
             } else {
                 Double remaining = this.getAmount() - value;
-                this.limit = this.getLimit() - remaining;
+                this.limit = this.getLimit() + remaining;
                 this.amount = 0.0;
                 this.updateTotalAmount();
                 System.out.println("Saque efetuado com sucesso!");
@@ -92,7 +93,7 @@ public class Account {
                 System.out.println("Transferência realizada com sucesso! ");
             } else {
                 Double remaining = this.getAmount() - value;
-                this.limit = this.getLimit() - remaining;
+                this.limit = this.getLimit() + remaining;
                 this.amount = 0.0;
 
                 destinationAccount.amount = destinationAccount.getAmount() + value;

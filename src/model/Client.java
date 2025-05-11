@@ -66,7 +66,7 @@ public class Client {
 
     @Override
     public String toString() {
-        return "Código: " + this.getCode() +
+        return "\nCódigo: " + this.getCode() +
                 "\nNome: " + this.getName() +
                 "\nEmail: " + this.getEmail() +
                 "\nCPF: " + this.getCpf() +
